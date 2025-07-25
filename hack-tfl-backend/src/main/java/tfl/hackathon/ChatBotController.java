@@ -3,8 +3,8 @@ package tfl.hackathon;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.ByteArrayInputStream;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class ChatBotController {
@@ -30,17 +30,22 @@ public class ChatBotController {
     }
 
     @PostMapping("/analyze-video")
-    public VideoAnalysisResponse analyze(@RequestParam String userId, @RequestParam("file") MultipartFile file) throws Exception {
+    public VideoAnalysisResponse analyze(@RequestParam String userId, @RequestParam("file") MultipartFile file) {
         return chatBotService.analyzeVideo(userId, file);
     }
 
     @PostMapping("/audio-chat")
-    public ByteArrayInputStream audioChat(@RequestBody AudioChatRequest request) {
-        return new ByteArrayInputStream(chatBotService.audioChatWithBytes(request.getUserId(), request.getFileUri(), request.getMimeType()));
+    public ChatResponse audioChat(@RequestParam String userId, @RequestParam("file") MultipartFile file) {
+        return chatBotService.audioChat(userId, file);
     }
 
-    @PostMapping("/audio-chat-as-file")
-    public String audioChatAsFile(@RequestBody AudioChatRequest request) {
-        return chatBotService.audioChatAsFile(request.getUserId(), request.getFileUri(), request.getMimeType());
+    @PostMapping("/update-prompt")
+    public String updatePrompt(@RequestBody UpdatePromptRequest request) {
+        return chatBotService.updatePrompt(request.getType(), request.getContent());
+    }
+
+    @GetMapping("/prompts")
+    public Map<String, String> getAllPrompts() {
+        return chatBotService.getAllPrompts();
     }
 }
