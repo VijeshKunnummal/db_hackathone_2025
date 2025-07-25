@@ -4,12 +4,13 @@ import { loanQuestions } from "../../../data/loanQuestions";
 import "./LoanRoulette.css";
 import SpinWheel from "./SpinWheel";
 import toast from "react-hot-toast";
+import { useScore } from "../../../contexts/ScoreProvider";
 
 const SEGMENTS = loanQuestions.map((q) => q.id);
 const LoanRoulette: React.FC = () => {
+  const { score, setScore } = useScore();
   const [spinning, setSpinning] = useState(false);
   const [selectedNumber, setSelectedNumber] = useState<number | null>(null);
-  const [score, setScore] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);

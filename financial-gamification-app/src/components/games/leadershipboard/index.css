@@ -1,0 +1,22 @@
+.leadershipboard {
+    position: absolute;
+    top: 78px;
+    right: calc(1rem + 38px);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 1);
+    border-radius: var(--border-radius, 12px);
+    border: 1px solid var(--card-border);
+    z-index: 9999;
+}
+
+.leadershipboard.open {
+    visibility: visible;
+    opacity: 1;
+}
+
+.leadershipboard .remark {
+    margin-top: 1rem;
+}
