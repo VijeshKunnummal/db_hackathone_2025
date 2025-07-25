@@ -30,10 +30,12 @@ public class ChatBotService {
                         2. Summarize the speaker’s tone (confident, unsure, passionate, etc).
                         3. Does it feel authentic and trustworthy? (Yes/No, why?)
                         4. Provide the location, name of the shops and text in the signs and boards
-                        5. Provide other aspects like the crowd
-                        6. Provide a 2–3 line business potential assessment.
-                    Return in JSON format.
-                    """;
+                        5. Provide other aspects like the crowd, atmosphere
+                        6. Provide image of the main actor to view in browser
+                        7. Provide a 2–3 line business potential assessment.Put in a field business_potential_assessment
+                        8. Provide the business potential assessment in one of the 3 formats STRONG, MEDIUM, LOW. Put in a field business_potential.
+                    Return in this JSON format. {"transcription": "","speaker_tone": "","is_authentic_and_trustworthy": "","location_shops_and_signs": {"location": "","shops": [{"name": "","items": [""]}],"boards": [""]},"other_aspects": {"crowd": "","atmosphere": ""},"main_actor_image": "","business_potential_assessment": "","business_potential": ""}
+            """;
     private static final Map<String, String> PROMPTS = new HashMap<>();
 
     static {
