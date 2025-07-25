@@ -11,6 +11,7 @@ import {
   hindiFinanceWords,
   hindiKeyboard,
 } from "./constants";
+import { FaPlus } from "react-icons/fa6";
 
 // Import icons (add these to your public/icons directory)
 const KEYBOARD_ICON = "/icons/keyboard.svg";
@@ -228,7 +229,7 @@ export const ChatUI: React.FC = () => {
                     )
                   }
                 >
-                  💰 Investment advice
+                  💰 Financial advice
                 </button>
                 <button
                   className="prompt-button"
@@ -341,7 +342,7 @@ export const ChatUI: React.FC = () => {
                 onClick={() => fileInputRef.current?.click()}
                 title="Upload Media"
               >
-                <img src={UPLOAD_ICON} alt="Upload" />
+                <FaPlus />
               </button>
             </div>
           </div>
