@@ -2,7 +2,7 @@ import "./games.css";
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { MdLeaderboard } from "react-icons/md";
-import { FaRegShareSquare } from "react-icons/fa";
+import { WhatsappIcon, WhatsappShareButton } from "react-share";
 
 const Games = () => {
   return (
@@ -11,9 +11,9 @@ const Games = () => {
         <a>
           <MdLeaderboard />
         </a>
-        <a>
-          <FaRegShareSquare />
-        </a>
+        <WhatsappShareButton url="https://finlit.com">
+          <WhatsappIcon />
+        </WhatsappShareButton>
       </div>
       <Outlet />
     </div>
