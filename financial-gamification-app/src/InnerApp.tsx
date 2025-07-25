@@ -39,6 +39,7 @@ const InnerApp = () => {
         <header className="app-header">
           <h1>
             FinLit<sup>+</sup>
+            <div className="fire-glow">🔥</div>
           </h1>
           <StyleSelector />
           {/*<nav>*/}

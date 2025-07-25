@@ -258,3 +258,40 @@ body.high-contrast .app-footer {
         animation: none !important;
     }
 }
+
+.fire-glow {
+    font-size: 2rem;
+    display: inline-block;
+    animation: flicker 1.5s infinite;
+    color: #ff6a00;
+    text-shadow: 0 0 5px #ff6a00,
+    0 0 15px #ff6a00,
+    0 0 30px #ff3300,
+    0 0 45px #ff0000;
+}
+
+@keyframes flicker {
+    0% {
+        text-shadow: 0 0 5px #ff6a00,
+        0 0 15px #ff6a00,
+        0 0 30px #ff3300,
+        0 0 45px #ff0000;
+        transform: scale(1);
+    }
+
+    50% {
+        text-shadow: 0 0 8px #ff8c00,
+        0 0 18px #ff8c00,
+        0 0 35px #ff4500,
+        0 0 60px #ff0000;
+        transform: scale(1.05);
+    }
+
+    100% {
+        text-shadow: 0 0 5px #ff6a00,
+        0 0 15px #ff6a00,
+        0 0 30px #ff3300,
+        0 0 45px #ff0000;
+        transform: scale(1);
+    }
+}
