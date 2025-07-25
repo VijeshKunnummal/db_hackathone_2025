@@ -1,9 +1,13 @@
 import "./login.css";
 import { useNavigate } from "react-router-dom";
+import { useScore } from "../../contexts/ScoreProvider";
 
 const LoginPage = () => {
+  const { setIsLogin } = useScore();
   const navigate = useNavigate();
   const onLogin = () => {
+    localStorage.setItem("isLogin", "true");
+    setIsLogin(true);
     navigate("/");
   };
   return (
