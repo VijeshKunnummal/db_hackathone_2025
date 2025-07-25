@@ -21,7 +21,7 @@ const Games = () => {
         </WhatsappShareButton>
       </div>
       <Outlet />
-      <LeadershipBoard open={openLeaderboard} onClose={toggleOpen} />
+      <LeadershipBoard open={openLeaderboard} />
     </div>
   );
 };

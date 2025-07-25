@@ -2,15 +2,12 @@ import "./index.css";
 import ReactDOM from "react-dom";
 import { useEffect, useState } from "react";
 import classnames from "classnames";
-import { useScore } from "../../../contexts/ScoreProvider";
 
 interface LeadershipBoardProps {
   open: boolean;
-  onClose: () => void;
 }
 
-const LeadershipBoard = ({ open, onClose }: LeadershipBoardProps) => {
-  const { score } = useScore();
+const LeadershipBoard = ({ open }: LeadershipBoardProps) => {
   const [readyToRender, setReadyToRender] = useState(false);
 
   useEffect(() => {

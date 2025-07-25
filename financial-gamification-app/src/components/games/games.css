@@ -22,6 +22,21 @@
     transition: all .3s;
 }
 
+.games .actions a:hover {
+    background: #fff;
+    color: var(--wheel-indigo);
+}
+
+[data-theme="light"] .games .actions a {
+    border-color: var(--dark-background);
+    color: var(--dark-background);
+}
+
+[data-theme="light"] .games .actions a:hover {
+    background: var(--dark-background);
+    color: #fff;
+}
+
 .games .actions button {
     width: 2rem;
     height: 2rem;
@@ -32,9 +47,4 @@
 .games .actions button svg {
     width: 2rem;
     height: 2rem;
-}
-
-.games .actions a:hover {
-    background: #fff;
-    color: var(--wheel-indigo);
 }
