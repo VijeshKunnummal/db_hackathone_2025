@@ -7,6 +7,7 @@ import { StyleSelector } from "./components/style/StyleSelector";
 import GameTransition from "./components/common/GameTransition";
 import "./App.css";
 import Footer from "./components/common/Footer";
+import { Toaster } from "react-hot-toast";
 
 const LoginPage = React.lazy(() => import("./components/LoginPage"));
 const HomePage = React.lazy(() => import("./components/HomePage"));
@@ -29,6 +30,7 @@ const App: React.FC = () => {
       <StyleProvider>
         <AccessibilityProvider>
           <ChatProvider>
+            <Toaster />
             <div className="app">
               <header className="app-header">
                 <h1>

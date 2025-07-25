@@ -1,8 +1,9 @@
 import classnames from "classnames";
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { loanQuestions } from "../../../data/loanQuestions";
 import "./LoanRoulette.css";
 import SpinWheel from "./SpinWheel";
+import toast from "react-hot-toast";
 
 const SEGMENTS = loanQuestions.map((q) => q.id);
 const LoanRoulette: React.FC = () => {
@@ -48,6 +49,11 @@ const LoanRoulette: React.FC = () => {
     setScore((prev) => prev + result * 10);
     setSpinning(false);
   };
+  useEffect(() => {
+    if (score >= 400) {
+      toast("🎉 Milestone reached! Turn your point to credit now!");
+    }
+  }, [score]);
 
   return (
     <div className="loan-roulette">
